@@ -117,15 +117,6 @@
             );
           });
 
-          layer.on("popupopen", () => {
-            const btn = layer.getPopup().getElement().querySelector("button[data-fid]");
-            if (btn) {
-              btn.addEventListener("click", () => {
-                const nowVisited = toggleVisited(feature, layer);
-              });
-            }
-          });
-
           layer.on("mouseover", () => {
             if (!isVisited(feature)) {
               layer.setStyle({ fillOpacity: 0.25, weight: 2 });
