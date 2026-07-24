@@ -70,21 +70,6 @@
     return d.toLocaleDateString("pl-PL", { day: "2-digit", month: "2-digit", year: "numeric" });
   }
 
-  function popupHtml(feature, justStamped) {
-    const name = feature.properties.name || "Bez nazwy";
-    const v = isVisited(feature);
-    const statusLine = v
-      ? `Odwiedzono: ${formatDate(visited[fid(feature)])}`
-      : "Jeszcze nieodwiedzone";
-    const btnLabel = v ? "Cofnij zaznaczenie" : "Oznacz jako odwiedzone";
-    return `
-      <div class="msi-popup${justStamped ? " just-stamped" : ""}">
-        <h3>${name}</h3>
-        <div class="status-line">${statusLine}</div>
-        <button type="button" data-fid="${fid(feature)}">${btnLabel}</button>
-      </div>`;
-  }
-
   function updateProgress() {
     const total = geoLayer ? geoLayer.getLayers().length : 0;
     const count = Object.keys(visited).length;
