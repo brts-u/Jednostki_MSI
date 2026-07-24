@@ -123,12 +123,8 @@
             className: "msi-tooltip"
           });
 
-          layer.bindPopup(popupHtml(feature, false));
-
           layer.on("click", () => {
             const nowVisited = toggleVisited(feature, layer);
-            layer.setPopupContent(popupHtml(feature, nowVisited));
-            layer.openPopup();
             showToast(
               nowVisited
                 ? `Oznaczono „${feature.properties.name}” jako odwiedzone`
@@ -141,7 +137,6 @@
             if (btn) {
               btn.addEventListener("click", () => {
                 const nowVisited = toggleVisited(feature, layer);
-                layer.setPopupContent(popupHtml(feature, nowVisited));
               });
             }
           });
