@@ -147,6 +147,10 @@ main#map {
 
 /* offset for toolbar height handled via JS padding on body, see app.js */
 
+path.leaflet-interactive:focus {
+  outline: none;
+}
+
 .leaflet-tooltip.msi-tooltip {
   font-family: var(--font-display);
   font-style: italic;
